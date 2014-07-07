@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!--
+
+      Theme: The Energy Issue
+      Author: Troy Conrad Therrien [github.com/troyth] + Project Projects  [http://jxnblk.com]
+      For: The Energy Issue  [http://theenergyissue.com]
+      Terms: Designed for The energy issue.
+
+-->
+<html>
+	<head>
+	<meta name="p:domain_verify" content="eafb985d55691bafd3bb4148538a5f0f"/>
+	    <link rel="stylesheet" href="http://dev.projectprojects.com/theenergyissue/final/ss-social/webfonts/ss-social.css">
+	    <style>
+	/* ————————————————————————————————————————————— */
+	/* !Meta */
+	/* ————————————————————————————————————————————— */
+	@viewport{
+		zoom: 1.0;
+		width: extend-to-zoom;
+	}
+	@-ms-viewport{
+		width: extend-to-zoom;
+		zoom: 1.0;
+	}
+	* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+	*:before {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+	*:after {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-font-smoothing: antialiased;}
+	body{margin:0 !important; padding:0 !important;font: normal 15px/1.2em Arial, Helvetica, sans-serif; word-spacing: -0.15em;letter-spacing: -0.02em;}
+	a {vertical-align: baseline;}
+	ul, li {display: inline-block; list-style: none; margin: 0; padding: 0;}
+
+	strong {font-weight: bold;}
+	em {font-style: italic;}
+	p {margin: 0 0 1em 0;}
+	a, a:hover, a:active, a:link {text-decoration: underline; outline: none !important; color: inherit;}
+
+	.tag a, .tag a:hover, .tag a:active, .tag a:link, .ss-icon a, .ss-icon a:hover, .ss-icon a:active, .ss-icon a:link, .hyperlink a, .hyperlink a:hover, .hyperlink a:active, .hyperlink a:link {text-decoration: none;}
+	a:hover {opacity: 0.75;}
+	.hidden {display: none;}
+
+
+	/* TEXT */
+	#menu, #taglineCopy, h2, .link, .quote, .text h2.title {
+		word-spacing: -0.15em;
+		letter-spacing: -0.02em;
+		text-align: left;
+		text-transform: none;
+	}
+
+	#menu{
+		font: normal 2.75em/1.1em Arial, Helvetica, sans-serif;
+	}
+
+	#taglineCopy, h2{
+		font: normal 2.75em/1.1em Arial, Helvetica, sans-serif;
+	}
+
+	.link, .quote, .text h2.title{
+		font: normal 2.3em/1.1em Arial, Helvetica, sans-serif;
+	}
+
+	#menu, #taglineCopy{
+		margin-bottom:0.3em;
+	}
+
+	#Header, #Footer, #Index{
+		width:90%;
+		margin:0 5%;
+	}
+
+	/* ————————————————————————————————————————————— */
+	/* !Logo */
+	/* ————————————————————————————————————————————— */
+	#Logo * {margin: 0; padding: 0;}
+	#Logo {position: relative; font-size: 100%; z-index: 99; margin: 0 5% 2em; width: 42.5%; float: left;}
+
+	#logoOff{ display:none; }
+	#logoOn{ display: block;}
+	#logoOn img, #logoOff img {width: 100%;}
+
+
+	.functionSelect{
+		display: block;
+		float:left;
+		margin-right:15px;
+		border:1px solid;
+		background-color:transparent;
+		color:black;
+		font-size:.5em;
+		float:left;
+		margin-bottom:1em;
+	}
+
+	/*
+	.functionSelect:after{
+		content:"/";
+		float:right;
+		color:black;
+	}*/
+
+	.customSelect {
+	/* This is the default class that is used */
+	/* Put whatever custom styles you want here */
+		border:1px solid;
+		background-color:transparent;
+		color:black;
+		font-size:1em;
+		float:left;
+	}
+
+	.customSelect.customSelectHover {
+	/* Styles for when the select box is hovered */
+		color:white;
+		background-color: black;
+		cursor:pointer;
+	}
+
+	.customSelect.customSelectOpen {
+	/* Styles for when the select box is open */
+		color:white;
+		background-color: black;
+	}
+
+	.customSelect.customSelectFocus {
+	/* Styles for when the select box is in focus */
+	}
+
+	.customSelectInner {
+	/* You can style the inner box too */
+		padding:1em;
+	}
+
+
+
+	/* ————————————————————————————————————————————— */
+	/* !Composition */
+	/* ————————————————————————————————————————————— */
+	#Footer {max-width: 1200px; margin: 0; padding: 0; display: inline-block; margin: 2em 5%;}
+
+
+	#tagline{ position:relative; z-index: 99; float:left; width:42.5%; }
+
+
+	#taglineCopy { float:left; width:90%;}
+
+	#Tags {font-size: 1em; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; -webkit-column-count:3; -moz-column-count:3; column-count:3; padding-top: 0; float: left; clear: left; width: 100%; color:black;}
+	.highlight{ color: black;}
+	#Footer-Content {margin: auto; width: 1203px;}
+	#Load-More { width: 150px; height: 40px; text-align: center; margin: 3em auto;}
+	/* ————————————————————————————————————————————— */
+	/* !Typography */
+	/* ————————————————————————————————————————————— */
+	h1 {font: inherit; margin-bottom: 1em;}
+	h2 {font: inherit; margin-bottom: 1em;}
+	blockquote {margin: 0; padding: 0; display: inline-block; padding-left:20px;}
+	.quote blockquote { padding:0;}
+	.leftQuote {margin-left:-0.33em;}
+	/* ————————————————————————————————————————————— */
+	/* !Global Modules */
+	/* ————————————————————————————————————————————— */
+
+	#Header {margin-top:3em;}
+	footer {text-align: center; margin: 6em 0;}
+
+	#Social {float:right; display: block; width:10%; position:relative; top:.5em;}
+
+	.ss-icon {display:block; font-size:1.5em; margin-bottom:.25em; text-align: right;}
+	.post {display: block;}
+
+	.text h2.title {margin-bottom: 1em;}
+	.link blockquote {display: inline; background-position: 0 bottom; background-repeat: repeat-x; background-image: url(underline.png)}
+	.source {font-style: italic;}
+	.tag {display: inline-block; margin: 0 2px 0 0;}
+
+	article iframe {width: 100%;}
+	.half-column {width: 50%; float: left;}
+	.quarter-column {width: 25%; float: left;}
+	.half-column, .quarter-column  {margin-bottom: 1em;}
+	.half-column img, .quarter-column img { max-width:100%;}
+	/* ————————————————————————————————————————————— */
+	/* !Index Modules */
+	/* ————————————————————————————————————————————— */
+	#Index{padding-top:2em; clear:both; padding-left:2.5%;}
+
+	#Index .post { width: 43.5%; margin: 2em 2.5% 7em 2.5%}
+
+	#Index .via .theenergyissue {display: none;}
+
+	#Index .read_more{ margin-top:1em;}
+
+	#Index .permalinkLink{ display: inline-block;}
+
+	.postDate {margin-top:1.5em;}
+	.postDate.theenergyissue{display: none;}
+
+	.postTags {font-size: 1em; text-transform: uppercase; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left; padding-top: 0; float:left; padding-top:1em;}
+
+	.tumblrControls { padding-top:1em; clear:both;}
+
+	#Index .caption, #Index .meta {width:75%;}
+
+	.caption{margin-top:1em;}
+
+	#Index article {font-size:1.2em; display: block; position: relative; float:left; text-align: left;}
+
+	#Index *:hover .arrow {opacity: 1;}
+	#Index .caption iframe {width: 100% !important;}
+	#Index .photoset {width: 100%; position: relative;}
+	#Index .photoset, #Index .photo { margin-bottom: 1em;}
+	#Index .photo img {width:100%;}
+	/* ————————————————————————————————————————————— */
+	/* !Permalink Modules */
+	/* ————————————————————————————————————————————— */
+	.Permalink #Logo{ width: 25%;}
+	.Permalink #tagline {width:60%;}
+	.Permalink #taglineCopy { }
+	.Permaline #menu { }
+
+	#Permalink{ margin: 0 5%; width:90%; }
+	#Permalink article { font-size:1.2em; text-align: left; margin: 2em 5%; width:90%;}
+	#Permalink article .text {width:54%;}
+	#Permalink article img{max-width:100%;height:auto;}
+
+
+
+	#Permalink .notesContainer { float:left;}
+	#Permalink .notesContainer ol{ padding: 1em 0; margin: 0; clear: both;}
+	#Permalink .notesContainer li{ display:block; list-style:none; margin-bottom:.3em;}
+
+	#Permalink article {font-size: 1.2em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
+	#Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+	#Permalink .caption {text-align: left; width: 35%; clear:both;}
+	#Permalink .photosetPhotos {margin:0 1em 1em 0; display:inline-block;}
+	#Permalink .postTags { width:35%;}
+	#Permalink .read_more {display: none;}
+
+	/* ————————————————————————————————————————————— */
+	/* !Footer */
+	/* ————————————————————————————————————————————— */
+
+	#Footer .title {display: none;}
+	#Footer .body {font-size: 1em; max-width: 1300px; line-height: 1.1em; font-family: Arial, Helvetica, sans-serif; text-align: left;}
+	#Footer #Copyright { font-size:1em;}
+	#Footer .links p { text-align: left; display: block;}
+
+	.likeButton, .reblogButton{width: 20px; display: block; margin-right: 15px; font-size: 2px; float:left; word-spacing: 0; letter-spacing: 0;}
+
+	.noteCount, .permalinkLink { margin-right: 15px; float:left;}
+
+/*
+	@media screen and (max-width:1500px){
+		#Logo { width: 35%;}
+		#tagline { width:50%; }
+	}*/
+
+	@media screen and (min-width:1300px){
+		#Header, #Index, #Permalink{ margin: 2em auto; max-width: 1300px; text-align: center;}
+	}
+
+	@media screen and (max-width:1180px){
+		body{ font-size:16px;}
+	}
+
+	@media screen and (max-width: 768px) {
+		#Logo { margin: 2em 5% 0; width: 90%;}
+		#tagline { margin: 2em 5%; width:90%; }
+		#taglineCopy { font: normal 2em/1.1em Arial, Helvetica, sans-serif;}
+
+		#Introduction-Text {width: 100%; float: none; clear: both; }
+		#Logo {margin-bottom: 5em;}
+		article {margin-bottom: 1em;}
+		.half-column, .quarter-column {width: 100%; float: left; clear: both; text-align: left;}
+	}
+
+	@media screen and (max-width: 700px) {
+		#Logo {margin: auto; left: 0; right: 0; font-size: 7px !important; margin-bottom: 5em;}
+
+		article {display: block; margin-bottom: 5em;}
+		.photoset {width: 100%; height: 400px;}
+		.slideshow {width: 100%; height: 100%;}
+		.single-image {width: 100%; height: auto;}
+		.quote, .link {width: 100%; font-size: 2em; line-height: 1.111em;}
+		.counter {font-size: 2em;}
+	}
+	    </style>
+	    <!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="http://dev.projectprojects.com/theenergyissue/final/ie.css" />
+	<![endif]-->
+		<script src="http://therrien-barley.com/modernizr.js"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	    <script src="http://therrien-barley.com/jquery.customSelect.min.js"></script>
+	    <title>{Title}</title>
+	    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50128858-1', 'theenergyissue.com');
+  ga('send', 'pageview');
+
+</script>
+	</head>
+
+	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=218065934884656&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		<header id="Header" {block:PermalinkPage}class="Permalink"{/block:PermalinkPage}>
+			<div id="Logo">
+				<a id="logoOn" href="javascript:(function(){var twerk = document.getElementById('EnergyTwerk'); if(document.getElementById('EnergyTwerk')==null){ var i = document.getElementById('I'); if(document.getElementById('I')){i.className = 'target';} var newcss = 'p, h2, h1, h3, h4, h5, h6, img, .img, span, div, header, li { -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; transform-origin: 50% 50%; -webkit-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; } @-webkit-keyframes rotate { 0% {-webkit-transform: rotate(0deg);} 100% {-webkit-transform: rotate(-0.3deg);}} @-moz-keyframes rotate { from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(-0.3deg);} } @-keyframes rotate { 0% {-transform: rotate(0deg);} 100% {-transform: rotate(-0.3deg);}}'; if ('\v'=='v') /* ie only */{ document.createStyleSheet().cssText = newcss;} else { var tag = document.createElement('style'); tag.id = 'EnergyTwerk'; tag.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(tag); tag[ (typeof document.body.style.WebkitAppearance=='string') /* webkit only */ ? 'innerText' : 'innerHTML'] = newcss;};} else {var i = document.getElementById('I'); if(document.getElementById('I')){i.className = ''}; var twerk = document.getElementById('EnergyTwerk'); twerk.outerHTML = '';}})();">
+					<img src="http://therrien-barley.com/theenergyissue_logo_on.svg">
+		</a><!-- /#logoOn -->
+
+		<a id="logoOff" href="javascript:(function(){var twerk = document.getElementById('EnergyTwerk'); if(document.getElementById('EnergyTwerk')==null){ var i = document.getElementById('I'); if(document.getElementById('I')){i.className = 'target';} var newcss = 'p, h2, h1, h3, h4, h5, h6, img, .img, span, div, header, li { -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; transform-origin: 50% 50%; -webkit-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; -moz-animation:rotate 0.01s linear infinite alternate; } @-webkit-keyframes rotate { 0% {-webkit-transform: rotate(0deg);} 100% {-webkit-transform: rotate(-0.3deg);}} @-moz-keyframes rotate { from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(-0.3deg);} } @-keyframes rotate { 0% {-transform: rotate(0deg);} 100% {-transform: rotate(-0.3deg);}}'; if ('\v'=='v') /* ie only */{ document.createStyleSheet().cssText = newcss;} else { var tag = document.createElement('style'); tag.id = 'EnergyTwerk'; tag.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(tag); tag[ (typeof document.body.style.WebkitAppearance=='string') /* webkit only */ ? 'innerText' : 'innerHTML'] = newcss;};} else {var i = document.getElementById('I'); if(document.getElementById('I')){i.className = ''}; var twerk = document.getElementById('EnergyTwerk'); twerk.outerHTML = '';}})();">
+			<img src="http://therrien-barley.com/theenergyissue_logo_off.svg">
+
+		</a><!-- /#logoOff -->
+
+			</div><!-- /#logo -->
+			<script type="text/javascript">document.getElementById('logoOff').click();</script>
+			<script type="text/javascript">setTimeout(function() {var logoOn = document.getElementById('logoOn').click();}, 2000);</script>
+
+			<div id="tagline">
+
+		        <p id="taglineCopy">The Energy Issue is a Columbia University GSAPP initiative to make energy a cultural issue, launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
+
+		        <div id="Social">
+		        	<div class='ss-icon'>
+		        		<a href="https://twitter.com/theenergyissue" target="_blank">twitter</a>
+		        	</div>
+		        	<div class="ss-icon">
+		        		<div class="fb-like" data-href="https://www.facebook.com/theenergyissue" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+		        	</div>
+		        </div>
+
+
+		        {block:HasPages}
+			        <nav id="menu">
+			        	<form>
+							<select id="menuSelect" class="functionSelect" name="menuSelect">
+							    <option value="/">Home</option>
+							    <option value="/about">About</option>
+							    <option value="/5klei">Symposium</option>
+							</select>
+						</form>
+
+			        </nav><!-- /#menu -->
+			    {/block:HasPages}
+
+
+			    {block:TagPage}
+			    	<h2>Posts tagged {Tag}</h2>
+			    {/block:TagPage}
+
+		        <ul id="Tags" {block:PermalinkPage}class="hidden"{/block:PermalinkPage}>
+
+					<li class="tag"><a href="/tagged/architecture">#architecture</a></li>
+					<li class="tag"><a href="/tagged/design">#design</a></li>
+					<li class="tag"><a href="/tagged/tech">#tech</a></li>
+					<li class="tag"><a href="/tagged/news">#news</a></li>
+					<li class="tag"><a href="/tagged/oil">#oil</a></li>
+					<li class="tag"><a href="/tagged/culture">#culture</a></li>
+					<li class="tag"><a href="/tagged/graph">#art</a></li>
+					<li class="tag"><a href="/tagged/fashion">#fashion</a></li>
+					<li class="tag"><a href="/tagged/fracking">#fracking</a></li>
+					<li class="tag highlight"><a href="/tagged/astrology">#astrology</a></li>
+					<li class="tag"><a href="/tagged/music">#music</a></li>
+					<li class="tag"><a href="/tagged/youth">#youth</a></li>
+					<li class="tag"><a href="/tagged/celebrity">#celebrity</a></li>
+					<li class="tag"><a href="/tagged/sports">#sports</a></li>
+					<li class="tag"><a href="/tagged/environment">#environment</a></li>
+					<li class="tag"><a href="/tagged/economics">#economics</a></li>
+					<li class="tag"><a href="/tagged/climate">#climate</a></li>
+					<li class="tag"><a href="/tagged/gas">#gas</a></li>
+					<li class="tag"><a href="/tagged/astronomy">#astronomy</a></li>
+					<li class="tag"><a href="/tagged/food">#food</a></li>
+					<li class="tag"><a href="/tagged/statistic">#statistic</a></li>
+					<li class="tag"><a href="/tagged/medicine">#medicine</a></li>
+					<li class="tag"><a href="/tagged/graph">#graph</a></li>
+					<li class="tag"><a href="/tagged/nature">#nature</a></li>
+					<li class="tag"><a href="/tagged/coal">#coal</a></li>
+					<li class="tag"><a href="/tagged/politics">#politics</a></li>
+					<li class="tag"><a href="/tagged/craft">#craft</a></li>
+					<li class="tag"><a href="/tagged/quote">#quote</a></li>
+					<li class="tag"><a href="/tagged/entertainment">#entertainment</a></li>
+					<li class="tag highlight"><a href="/tagged/weather">#weather</a></li>
+					<li class="tag"><a href="/tagged/gif">#gif</a></li>
+					<li class="tag"><a href="/tagged/water">#water</a></li>
+					<li class="tag"><a href="/tagged/funny">#funny</a></li>
+					<li class="tag"><a href="/tagged/animals">#animals</a></li>
+					<li class="tag"><a href="/tagged/advertising">#advertising</a></li>
+					<li class="tag"><a href="/tagged/physics">#physics</a></li>
+					<li class="tag"><a href="/tagged/china">#china</a></li>
+					<li class="tag"><a href="/tagged/history">#history</a></li>
+					<li class="tag"><a href="/tagged/urbanism">#urbanism</a></li>
+					<li class="tag"><a href="/tagged/africa">#africa</a></li>
+					<li class="tag"><a href="/tagged/theory">#theory</a></li>
+					<li class="tag"><a href="/tagged/war">#war</a></li>
+					<li class="tag"><a href="/tagged/wildlife">#wildlife</a></li>
+					<li class="tag"><a href="/tagged/electricity">#electricity</a></li>
+					<li class="tag highlight"><a href="/tagged/sleep">#sleep</a></li>
+					<li class="tag"><a href="/tagged/biology">#biology</a></li>
+					<li class="tag"><a href="/tagged/travel">#travel</a></li>
+					<li class="tag"><a href="/tagged/chemistry">#chemistry</a></li>
+
+		        </ul>
+
+
+
+		    </div><!-- /#tagline -->
+		</header><!-- /#head -->
+
+
+
+	<main {block:IndexPage}id="Index"{/block:IndexPage}  {block:PermalinkPage}id="Permalink"{/block:PermalinkPage}  class="cf ">
+
+	{block:Posts}
+
+    <article class="post {block:Odd}odd{/block:Odd}{block:Even}even{/block:Even}" data-id="">
+
+        <!-- ----------------------------------------------- -->
+        <!-- !TEXT BLOCK- ---------------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Regular}
+
+        <div class="text">
+
+	        <!-- !TITLE - -------------------------------------- -->
+
+	        {block:Title}<h2 class="title">{Title}</h2>{/block:Title}
+
+	        <!-- !BODY CONTENT---------------------------------- -->
+
+	        <div class="body">{Body}</div>
+
+		</div>
+
+        {/block:Regular}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !PHOTOSET ------------------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Photoset}
+
+        <div class="photoset">
+
+        	{block:IndexPage}
+        		{Photoset-400}
+        	{/block:IndexPage}
+
+        	{block:PermalinkPage}
+	        	{block:Photoset}
+	        		{block:Photos}
+	        			<div class="photosetPhotos">
+	        				<img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+				        </div>
+	                {/block:Photos}
+	            {/block:Photoset}
+            {/block:PermalinkPage}
+
+            {block:Caption}
+            	<div class="caption">{Caption}</div>
+            {/block:Caption}
+        </div>
+
+        {/block:Photoset}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !PHOTO----------------------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Photo}
+
+        <div class="photo">
+
+        	<!-- !IMAGE ---------------------------------------- -->
+
+        	<!-- <img class="single-image" src="" alt=""> -->
+
+            {block:IndexPage}
+                <a href="{Permalink}">
+                    <img class="single-image" src="{PhotoURL-500}" />
+                </a>
+            {/block:IndexPage}
+
+            {block:PermalinkPage}
+                <img class="single-image" src="{PhotoURL-HighRes}" />
+            {/block:PermalinkPage}
+
+        	<!-- !CAPTION----------------------------------------- -->
+
+        	{block:Caption}
+        	<div class="caption">{Caption}</div>
+        	{/block:Caption}
+        </div>
+
+        {/block:Photo}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !QUOTE BLOCK -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Quote}
+
+        <div class="quote">
+            <a href="{Permalink}" target="_self">
+	            <blockquote class="words {Length}">
+	                <span class="leftQuote">&ldquo;</span>{Quote}&rdquo;
+	            </blockquote>
+	        </a>
+            <p class="source">&mdash;{Source}</p>
+        </div>
+
+        {/block:Quote}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !LINK BLOCK -->
+        <!-- ----------------------------------------------- -->
+
+		{block:Link}
+
+        <div class="link">
+
+	        	<!-- !CAPTION----------------------------------------- -->
+
+                <div class="hyperlink"><a href="{URL}" {Target}>{Name}&nbsp;→</a></div>
+                {block:Description}{Description}{/block:Description}
+
+
+        </div>
+
+        {/block:Link}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !VIDEO BLOCK -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Video}
+
+        <div class="frame video">
+
+	        <!-- PLAYER---------------------------------------- -->
+
+	        <div class="player">{VideoEmbed-400}</div>
+
+        	<!-- !CAPTION----------------------------------------- -->
+
+        	{block:Caption}
+        	<div class="caption">{Caption}</div>
+        	{/block:Caption}
+
+        </div>
+
+        {/block:Video}
+
+        <!-- ----------------------------------------------- -->
+        <!-- AUDIO BLOCK -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Audio}
+
+        <div class="audio">
+
+	        <!-- PLAYER---------------------------------------- -->
+
+	        <div class="player"></div>
+
+        	<!-- !CAPTION----------------------------------------- -->
+
+        	<div class="caption"><a href=""></a></div>
+
+	      </div>
+
+        {/block:Audio}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !PANORAMA BLOCK-------------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+	    {block:Panorama}
+
+        <div class="panorama"><img src="" alt=""></div>
+
+        {/block:Panorama}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !CHAT BLOCK------------------------------------ -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Chat}
+
+        <div class="chat">
+            <ul class="conversation">
+                <li class="line "></li>
+            </ul>
+        </div>
+
+
+
+        {/block:Chat}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !ANSWER BLOCK-------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+        {block:Answer}
+
+        <div class="answer"><img src=""></div>
+
+        {/block:Answer}
+
+        <!-- ----------------------------------------------- -->
+        <!-- !END BLOCKS---------------------------- -->
+        <!-- ----------------------------------------------- -->
+
+
+        <div class="meta">
+
+        	<div class="via">
+	        	{block:ContentSource}
+	        	<span class="{SourceTitle}">
+					[via <a href="{SourceURL}" target="_blank">{SourceTitle}</a>]
+				</span>
+	        	{/block:ContentSource}
+	        </div>
+
+
+
+        	<div class="postDate {PostAuthorName}">
+	        	Posted by: <a href="{PostAuthorURL}" target="_blank">{PostAuthorName}</a>
+	        </div>
+
+			{block:HasTags}
+	        <ul class="postTags">
+	        	{block:Tags}
+	        	<li class="tag"><a href="{TagURL}">#{Tag}</a></li>
+	        	{/block:Tags}
+	        </ul>
+		    {/block:HasTags}
+
+
+
+	        <div class="tumblrControls">
+	        	<div class="likeButton">
+		        	{LikeButton color="black"}
+		        </div>
+		        <div class="reblogButton">
+		        	{ReblogButton color="black"}
+		        </div>
+
+
+
+	        	<div class="notesContainer">
+	        		{block:NoteCount}
+			        <div class="noteCount">
+			        	{NoteCountWithLabel}
+			        </div>
+			        {/block:NoteCount}
+			        {block:PostNotes}
+		        		{PostNotes}
+		        	{/block:PostNotes}
+		        </div>
+
+
+		        {block:IndexPage}
+		    		<div class="permalinkLink"><a href="{Permalink}">Permalink&nbsp;→</a></div>
+		    	{/block:IndexPage}
+		    </div>
+
+
+
+
+
+
+        </div><!-- /.meta -->
+
+    </article>
+
+    {/block:Posts}
+
+	{block:Pagination}
+		<nav id="Load-More">
+
+		{block:NextPage}
+			<a href="{NextPage}">Older Posts</a>
+		{/block:NextPage}
+
+		{block:PreviousPage}
+			<a href="{PreviousPage}">Newer Posts</a>
+		{/block:PreviousPage}
+
+		</nav>
+	{/block:Pagination}
+
+
+
+	</main>
+
+    <footer id="Footer">
+
+    	<div class="quarter-column links">
+			<p id="Copyright">&copy; {CopyrightYears} &mdash; The Energy Issue. A Columbia University GSAPP initiative launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope&reg;.</span></p>
+		</div>
+		<div class="quarter-column">
+			<a href="http://www.arch.columbia.edu/" target="_blank"><img src="http://therrien-barley.com/CU_logo.png" /></a>
+		</div>
+
+		<div class="quarter-column">
+			<a href="http://www.oldcastlebe.com/" target="_blank"><img src="http://therrien-barley.com/obe_logo.png" /></a>
+		</div>
+
+		<div class="quarter-column">
+			<div id="Social">
+	        	<div class='ss-icon'>
+	        		<a href="https://twitter.com/theenergyissue" target="_blank">twitter</a>
+	        	</div>
+	        	<div class="ss-icon">
+	        		<div class="fb-like" data-href="https://www.facebook.com/theenergyissue" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+	        	</div>
+	        </div>
+		</div>
+
+    </footer>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        	//using Custom Select plugin http://adam.co/lab/jquery/customselect/
+        	//$('.functionSelect').customSelect();
+        	$('#menuSelect').change(function()
+			{
+				window.location.href = $(this).val();
+			});
+
+			$('#menuSelect').val( window.location.pathname.toLowerCase() );
+
+
+        	$('#logoOn').click(function(){
+        		$(this).hide();
+        		$('#logoOff').show();
+        	});
+
+        	$('#logoOff').click(function(){
+        		$(this).hide();
+        		$('#logoOn').show();
+        	});
+
+        });
+    </script>
+
+</body>
+</html>
