@@ -350,7 +350,7 @@
         $allVideos.each(function() {
 
           $(this)
-            .data('aspectRatio', 0.5625)
+            .data('aspectRatio', 540/1280)
 
             // and remove the hard coded width/height
             .removeAttr('height')
@@ -377,6 +377,14 @@
 
         // Kick off one resize to fix all videos on page load
         }).resize();
+
+        $(window).resize(function(){
+
+
+
+        });
+
+
         console.log('blah');
       });
     </script>
@@ -394,7 +402,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="videoHeader">
-      <iframe src="//player.vimeo.com/video/100234196" width="1280" height="960" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <iframe src="//player.vimeo.com/video/100358394" width="1280" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 
     <header id="header">
@@ -408,6 +416,9 @@
 
           <li id="mail" class="ss-icon">
             <a href="https://youtube.com/theenergyissue" target="_blank">mail</a>
+          </li>
+          <li id="googlePlus" class="ss-icon">
+            <a href="https://plus.google.com/114394870789469156655" target="_blank">google+</a>
           </li>
           <li id="youtube" class="ss-icon">
             <a href="https://youtube.com/theenergyissue" target="_blank">youtube</a>
@@ -423,6 +434,9 @@
           </li>
           <li id="twitter" class="ss-icon">
             <a href="https://twitter.com/theenergyissue" target="_blank">twitter</a>
+          </li>
+          <li id="twitter" class="ss-icon">
+            <a href="/about" target="_self">About</a>
           </li>
         </ul>
       </div><!-- /#topBar -->
