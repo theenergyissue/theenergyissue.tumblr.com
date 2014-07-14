@@ -101,38 +101,74 @@
 
       #videoHeader{
         width:100%;
+        position:relative;
+        z-index:3;
       }
 
-      .videoHeader {
-      	position: relative;
-      	padding-bottom: 56.25%; /* 16:9 */
-      	padding-top: 25px;
-      	height: 0;
-      }
-      .videoHeader object,
-      .videoHeader embed,  {
-      	position: absolute;
-      	top: 0;
-      	left: 0;
-      	width: 100%;
-      	height: 100%;
+      #videoHeader iframe{
+        z-index:3;
+        position:relative;
+        top:0;
+        left:0;
+        display:block;
       }
 
+      #videoHeader .overlay{
+        position:absolute;
+        top:0;
+        left:0;
+        display:block;
+        background-color:black;
+        z-index:2;
+      }
+
+      #Permalink #videoHeader{
+        display:none;
+      }
+
+      #Permalink #header{
+        position:fixed;
+        top:15px;
+      }
+
+      #Permalink #tagline{
+        display:none;
+      }
+
+      #Permalink #main{
+        width:90%;
+        margin:200px 5% 40px;
+        text-align:left;
+        clear:both;
+        display:block;
+        position:relative;
+        z-index:1;
+        float:left;
+      }
+
+      #Permalink .photoset,
+      #Permalink .meta,
+      #Permalink #Posts{
+        text-align:left;
+      }
 
 
       #header{
         width:100%;
         margin:0;
         float:left;
+        position:relative;
+        z-index:2;
       }
       #topBar{
         width:90%;
-        margin:7px 5% 20px;
+        margin:15px 5% 20px;
       }
 
       #socialIcons{
         list-style:none;
         float:right;
+        vertical-align:middle;
       }
       .ss-icon{
         margin-left:7px;
@@ -242,23 +278,23 @@
       /* !Permalink Modules */
       /* ————————————————————————————————————————————— */
 
-      #Permalink{ margin: 0 5%; width:90%; }
-      #Permalink article { font-size:1.2em; text-align: left; margin: 2em 5%; width:90%;}
-      #Permalink article .text {width:54%;}
-      #Permalink article img{max-width:100%;height:auto;}
+      #Permalink #Posts{ margin: 0 5%; width:90%; }
+      #Permalink #Posts #Posts article { font-size:1.2em; text-align: left; margin: 2em 5%; width:90%;}
+      #Permalink #Posts article .text {width:54%;}
+      #Permalink #Posts article img{max-width:100%;height:auto;}
 
 
 
-      #Permalink .notesContainer { float:left;}
-      #Permalink .notesContainer ol{ padding: 1em 0; margin: 0; clear: both;}
-      #Permalink .notesContainer li{ display:block; list-style:none; margin-bottom:.3em;}
+      #Permalink #Posts .notesContainer { float:left;}
+      #Permalink #Posts .notesContainer ol{ padding: 1em 0; margin: 0; clear: both;}
+      #Permalink #Posts .notesContainer li{ display:block; list-style:none; margin-bottom:.3em;}
 
-      #Permalink article {font-size: 1.2em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
-      #Permalink .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
-      #Permalink .caption {text-align: left; width: 35%; clear:both;}
-      #Permalink .photosetPhotos {margin:0 1em 1em 0; display:inline-block;}
-      #Permalink .postTags { width:35%;}
-      #Permalink .read_more {display: none;}
+      #Permalink #Posts article {font-size: 1.2em; line-height: 1.2em; display: inline-block; position: relative; clear:both; float:left;}
+      #Permalink #Posts .arrow {z-index: 1000; position: absolute; cursor: pointer; width: 3em; height: 100%; line-height: 15em; opacity: 1; -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;}
+      #Permalink #Posts .caption {text-align: left; width: 375px; clear:both;}
+      #Permalink #Posts .photosetPhotos {margin:0 1em 1em 0; display:inline-block;}
+      #Permalink #Posts .postTags { width:375px;}
+      #Permalink #Posts .read_more {display: none;}
 
       /* ————————————————————————————————————————————— */
       /* !Footer */
@@ -287,9 +323,6 @@
         #tagline { width:50%; }
       }*/
 
-      @media screen and (min-width:1300px){
-        #Permalink{ margin: 2em auto; max-width: 1300px; text-align: center;}
-      }
 
       @media screen and (max-width:1180px){
         body{ font-size:16px;}
@@ -325,6 +358,8 @@
     <script src="http://therrien-barley.com/modernizr.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -332,19 +367,32 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-50128858-1', 'theenergyissue.com');
+      ga('require', 'displayfeatures');
       ga('send', 'pageview');
     </script>
 
     <script>
       $(document).ready(function(){
+
+        var scrollStop = 700;
+
+        var $introVideo = $('#videoHeader iframe');
+
+        console.dir($introVideo);
+
+        var $container = $('body');
+
+        $introVideo
+          .data('aspectRatio', 540/1280)
+          .removeAttr('height')
+          .removeAttr('width');
+        /*
+
         // Find all YouTube videos
         var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='http://www.youtube.com']"),
 
         // The element that is fluid width
-        $fluidEl = $("body");
-
-        console.log('$allVideos:');
-        console.dir($allVideos);
+        var $fluidEl = $("body");
 
         // Figure out and save aspect ratio for each video
         $allVideos.each(function() {
@@ -356,10 +404,25 @@
             .removeAttr('height')
             .removeAttr('width');
         });
+        */
 
         // When the window is resized
         $(window).resize(function() {
 
+          var introWidth = $container.width();
+          var introHeight = introWidth * $introVideo.data('aspectRatio');
+
+          $introVideo
+            .width(introWidth)
+            .height(introHeight);
+
+          $('#videoHeader .overlay')
+            .width(introWidth)
+            .height(introHeight);
+
+          scrollStop = introHeight - 10;
+
+          /*
           var newWidth = $fluidEl.width();
 
           // Resize all videos according to their own aspect ratio
@@ -370,27 +433,57 @@
               .width(newWidth)
               .height(newWidth * $el.data('aspectRatio'));
 
-            console.log('new vid: ' + newWidth);
-
           });
-          console.log('resize');
+          */
+
+          $('#videoHeader .overlay').click(function(){
+            $(window).scrollTop(0);
+            $('#videoHeader iframe').css('opacity', 1.0);
+
+            $('#header').css('position', '').css('top', '');
+            $('#videoHeader').css('position', '').css('top', '');
+            $('#main').css('marginTop', '');
+            $('#videoHeader iframe').css('zIndex', '');
+            $('#videoHeader .overlay').css('cursor', '');
+          });
+
+          $('#videoHeader .overlay').hover(function(){
+            $(this).css('top', parseInt($(this).css('top')) + 5);
+          }, function(){
+            $(this).css('top', parseInt($(this).css('top')) - 5);
+          });
+
+
+          $(window).scroll(function(){
+            //fade the video out with scrolling to reveal black clickable rectangle below
+            $('#videoHeader iframe').css('opacity', 1- ($(window).scrollTop()/scrollStop) );
+
+            if( $(window).scrollTop() > scrollStop ){
+              $('#header').css('position', 'fixed').css('top', '15px');
+
+              $('#videoHeader').css('position', 'fixed').css('top', -1*scrollStop);
+              $('#main').css('marginTop', scrollStop + parseInt($('#header').height()) );
+
+              $('#videoHeader iframe').css('zIndex', '1');
+              $('#videoHeader .overlay').css('cursor', 'pointer');
+
+            }else{
+              $('#header').css('position', '').css('top', '');
+              $('#videoHeader').css('position', '').css('top', '');
+              $('#main').css('marginTop', '');
+              $('#videoHeader iframe').css('zIndex', '');
+              $('#videoHeader .overlay').css('cursor', '');
+            }
+          });
 
         // Kick off one resize to fix all videos on page load
         }).resize();
 
-        $(window).resize(function(){
-
-
-
-        });
-
-
-        console.log('blah');
       });
     </script>
 
   </head>
-  <body>
+  <body {block:IndexPage}id="Index"{/block:IndexPage}{block:PermalinkPage}id="Permalink"{/block:PermalinkPage}>
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -402,6 +495,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="videoHeader">
+      <div class="overlay"></div>
       <iframe src="//player.vimeo.com/video/100358394" width="1280" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 
@@ -444,7 +538,7 @@
 
     <main id="main">
       <div id="content">
-        <h2>The Energy Issue is a Columbia University GSAPP initiative to make energy a cultural issue, launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope®.</span></h2>
+        <h2 id="tagline">The Energy Issue is a Columbia University GSAPP initiative to make energy a cultural issue, launched in partnership with <span style="white-space;nowrap;">Oldcastle&nbsp;BuildingEnvelope®.</span></h2>
 
         {block:HasPages}
         <nav id="menu">
@@ -458,7 +552,7 @@
         </nav><!-- /#menu -->
         {/block:HasPages}
 
-        <div {block:IndexPage}id="Index"{/block:IndexPage}  {block:PermalinkPage}id="Permalink"{/block:PermalinkPage}  class="cf ">
+        <div id="Posts">
 
           {block:TagPage}
             <h2>Posts tagged {Tag}</h2>
@@ -681,6 +775,23 @@
 
       </div><!-- /#content -->
     </main><!-- /#main -->
+
+    <script type="text/javascript">
+  var _sf_async_config = { uid: 56658, domain: 'theenergyissue.com', useCanonical: true };
+  (function() {
+    function loadChartbeat() {
+      window._sf_endpt = (new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+      document.body.appendChild(e);
+    };
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
 
   </body>
 
